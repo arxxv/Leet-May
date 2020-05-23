@@ -1,0 +1,28 @@
+class Solution {
+public:
+    string frequencySort(string s) {
+        string p;
+        int i=0;
+        map<char,int>m1;
+        for(auto x : s)
+        {
+            m1[x]++;
+        }
+       vector<pair<int,char>>v1;
+        for(int i=0;i<s.length();i++)
+        {
+            v1.push_back(make_pair(m1[s[i]],s[i]));
+        }
+        sort(v1.begin(),v1.end());
+        for(i=0;i<v1.size();i++)
+                     p.push_back(v1[i].second);
+    
+        string k;
+        for(int i=p.length()-1;i>=0;i--)
+        {
+            k.push_back(p[i]);
+        }
+        return k;
+    }
+
+};
